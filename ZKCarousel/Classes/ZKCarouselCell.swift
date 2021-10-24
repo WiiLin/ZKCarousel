@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import Kingfisher
 
 public class ZKCarouselCell: UICollectionViewCell {
     
@@ -67,6 +68,7 @@ public class ZKCarouselCell: UICollectionViewCell {
     public override func prepareForReuse() {
         super.prepareForReuse()
         imageView.image = nil
+        imageView.kf.cancelDownloadTask()
         titleLabel.text = nil
         descriptionLabel.text = nil
     }
@@ -96,7 +98,12 @@ public class ZKCarouselCell: UICollectionViewCell {
     }
     
     private func parseData(forSlide slide: ZKCarouselSlide) {
-        imageView.image = slide.image
+        switch slide.image {
+        case let .image(image):
+            imageView.image = image
+        case let .url(url):
+            imageView.kf.setImage(with:url)
+        }
         titleLabel.text = slide.title
         descriptionLabel.text = slide.description
     }

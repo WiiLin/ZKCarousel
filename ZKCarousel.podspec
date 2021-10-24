@@ -29,5 +29,5 @@ ZKCarousel is a simple carousel control built on top of a UICollectionView. It c
   
   s.ios.deployment_target = '12.0'
   s.frameworks = 'UIKit'
-
+  s.dependency 'Kingfisher'
 end

@@ -10,6 +10,7 @@ import UIKit
 
 @objc public protocol ZKCarouselDelegate: AnyObject {
     func carouselDidScroll()
+    func didSelected(index: Int)
 }
 
 final public class ZKCarousel: UIView,
@@ -37,7 +38,7 @@ final public class ZKCarousel: UIView,
         return collectionView.indexPathForItem(at: visiblePoint)?.item
     }
     
-    private lazy var tapGesture: UITapGestureRecognizer = {
+    public lazy var tapGesture: UITapGestureRecognizer = {
         let tap = UITapGestureRecognizer(target: self, action: #selector(tapGestureHandler(tap:)))
         return tap
     }()
@@ -166,6 +167,9 @@ final public class ZKCarousel: UIView,
     
     public func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat {
         return 0
+    }
+    public func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        delegate?.didSelected(index: indexPath.row)
     }
     
     // MARK: - UIScrollViewDelegate

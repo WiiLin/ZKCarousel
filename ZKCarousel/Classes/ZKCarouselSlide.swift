@@ -8,11 +8,16 @@
 import UIKit
 
 public struct ZKCarouselSlide {
-    public var image : UIImage
+    public enum Image {
+        case url(URL)
+        case image(UIImage)
+    }
+    public var image : Image
+    public var imageUrl : URL?
     public var title : String?
     public var description: String?
     
-    public init(image: UIImage,
+    public init(image: Image,
                 title: String? = nil,
                 description: String? = nil) {
         

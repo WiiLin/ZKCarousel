@@ -1,16 +1,23 @@
 PODS:
-  - ZKCarousel (0.2.1)
+  - Kingfisher (7.1.1)
+  - ZKCarousel (1.1.0):
+    - Kingfisher
 
 DEPENDENCIES:
   - ZKCarousel (from `../`)
+
+SPEC REPOS:
+  trunk:
+    - Kingfisher
 
 EXTERNAL SOURCES:
   ZKCarousel:
     :path: "../"
 
 SPEC CHECKSUMS:
-  ZKCarousel: 2cb2a9bbfebfa50ff7e240ae061890cdc3ee3cd8
+  Kingfisher: f738f9c4a3415823b8e2985d10aa2d6a9f37bc4d
+  ZKCarousel: f46cc945dcca6a2ff53a625c5b0c50ff3323a7a4
 
-PODFILE CHECKSUM: ac6304db421a3940838a5756b877b1da72952809
+PODFILE CHECKSUM: d14f873b5c740128dde9663409fe2ac43b3dcf3a
 
-COCOAPODS: 1.7.2
+COCOAPODS: 1.11.2
