@@ -11,7 +11,7 @@ extension UIImageView {
     func addBlackGradientLayer(frame: CGRect){
         let gradient = CAGradientLayer()
         gradient.frame = frame
-        gradient.colors = [UIColor.clear.cgColor, UIColor.black.withAlphaComponent(0.6).cgColor]
+        gradient.colors = [UIColor.clear.cgColor, ZKCarousel.cellMaskColor.cgColor]
         gradient.locations = [0.0, 0.5]
         
         layer.insertSublayer(gradient, at: 0)

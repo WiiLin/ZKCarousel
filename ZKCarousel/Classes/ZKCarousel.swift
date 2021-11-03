@@ -19,6 +19,7 @@ final public class ZKCarousel: UIView,
                                UICollectionViewDataSource {
     
     // MARK: - Properties
+    public static var cellMaskColor: UIColor =  UIColor.black.withAlphaComponent(0.6)
     private var timer: Timer = Timer()
     public var interval: Double = 1.0
     public var delegate: ZKCarouselDelegate?
